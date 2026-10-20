@@ -13,6 +13,12 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+
+// Route::get('/dashboard', function () {
+//     return "<h1>Welcome to the Dashboard</h1>";
+// });
+
+
 Route::middleware('auth')->group(function () {
     // Routes de gestion du profil (requises par la navigation Breeze)
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
